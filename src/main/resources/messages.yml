@@ -1,0 +1,46 @@
+#   Farm tournament configuration file generated for GroupEvent plugin.
+
+# Message envoyé au sender lors du reload du plugin.
+reload: "&7[&3Group&9Event&7] &fPlugin reloaded."
+# Message envoyé si le sender n'a pas la permission.
+noPerm: "&7[&3Group&9Event&7] &cVous n'avez pas la permission !"
+# Envoyé si la commande ne peut être utilisé que par un joueur.
+onlyPlayer: "&7[&3Group&9Event&7] &cCette commande ne peut être effectué que par un joueur !"
+
+# Configuration des messages du mode de jeu tournoi.
+tournament:
+  # Message envoyé lors de la commande /tf [info(s)].
+  # Note : Tous les placeholders utilisés avec PlaceholderAPI sont utilisables.
+  info: |-
+    &7[&3Group&9Event&7] &fClassement actuel:
+    <1> &b%tf_leaderboard_name_1% &f: %tf_leaderboard_points_1% &fpoints;
+    <2> &b%tf_leaderboard_name_2% &f: %tf_leaderboard_points_2% &fpoints;
+    <3> &b%tf_leaderboard_name_3% &f: %tf_leaderboard_points_3% &fpoints.
+  # Message envoyé à tous les joueurs lors du début d'un event programmé.
+  # Placeholder disponible : %tf_item%
+  start: "&7[&3Group&9Event&7] &fUn event tournoi a été lancé ! Objectif: %tf_item%"
+  # Message envoyé à tous les joueurs lors de la fin d'un event programmé.
+  stop: "&7[&3Group&9Event&7] &fL'event tournoi est terminé !"
+  # Message envoyé au sender si aucun tournoi n'est actif après la commande /tf stop.
+  noActiveEvent: "&7[&3Group&9Event&7] &cIl n'y a pas de tournoi actif !"
+  # Message envoyé au sender si un tournoi est déjà actif après la commande /tf start.
+  alreadyActiveEvent: "&7[&3Group&9Event&7] &cIl y a déjà un tournoi actif !"
+  # Message envoyé à tous les joueurs lors du début d'un event forcé.
+  # Placeholder disponible : %tf_item%
+  forceStartPlayers: "&7[&3Group&9Event&7] &fL'event tournoi a été lancé par un admin ! Profitez-en ! Objectif: %tf_item%"
+  # Message envoyé au sender lors du début d'un event forcé.
+  forceStartSender: "&7[&3Group&9Event&7] &fVous avez commencé un event tournoi."
+  # Message envoyé à tous les joueurs lors de la fin d'un event forcé.
+  forceStopPlayers: "&7[&3Group&9Event&7] &fL'event tournoi a été arrêté de force ! Aucune récompense ne sera donnée."
+  # Message envoyé au sender lors de la fin d'un event forcé.
+  forceStopSender: "&7[&3Group&9Event&7] &fVous avez arrêté l'event tournoi."
+  # Message envoyé au sender lors d'une erreur dans une commande.
+  error: "&7[&3Group&9Event&7] &cErreur lors de l'exécution de la commande."
+  # Message envoyé lors de l'exécution de la commande /tf help.
+  help: |-
+    &7[&3Group&9Event&7] &fCommandes disponibles:
+    - /tf [info(s)]
+    - /tf reload
+    - /tf start
+    - /tf forcestop
+    - /tf help

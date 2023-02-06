@@ -1,0 +1,65 @@
+#   Farm tournament configuration file generated for GroupEvent plugin.
+
+# Configuration des missions disponibles dans l'évènement tournoi.
+# Le tournoi comprend 4 actions possibles: Miner, agriculter (?), crafter et tuer.
+# Ils correspondent aux clefs "mining", "farming", "crafting" et "killing". De ce fait, ces clefs sont importantes !
+# Si vous voulez ignorer un type de mission, il vous suffit de virer la clef avec son contenu.
+# Note: Toutes les missions suivent l'exemple ci-dessous.
+
+# Exemple:
+#  # Correspond à l'objectif de la mission.
+#  # Dépend du type de mission.
+#  # Pour les missions du type MINING, FARMING et CRAFTING, vous devez vous référer à la valeur du matériau.
+#  # Pour plus d'aide, référez-vous au lien suivant: https://helpch.at/docs/1.16.4/org/bukkit/Material.html
+#  # Pour les missions du type KILLING, vous devez vous référer à la valeur du mob.
+#  # Pour plus d'aide, référez-vous au lien suivant: https://helpch.at/docs/1.16.4/org/bukkit/entity/EntityType.html
+#  STONE:
+#    # Correspond au nom donné à l'objectif de la mission.
+#    # Vous êtes entièrement libre.
+#    name: "Roche"
+#    # Correspond au nombre de points donnés par mission réussie.
+#    points: 1
+mining:
+  STONE:
+    name: "Roche"
+    points: 1
+    linkedPlaceholder: "Roche"
+  COAL_ORE:
+    name: "Minerai de charbon"
+    points: 1
+    linkedPlaceholder: "Roche"
+  IRON_ORE:
+    name: "Minerai de fer"
+    points: 1
+    linkedPlaceholder: "Fer"
+  DIAMOND_ORE:
+    name: "Minerai de diamant"
+    points: 1
+    linkedPlaceholder: "Diamant"
+farming:
+  WHEAT:
+    name: "Blé"
+    points: 1
+    linkedPlaceholder: "Blé"
+  CARROTS:
+    name: "Carotte"
+    points: 5
+    linkedPlaceholder: "Carotte"
+crafting:
+  SMOOTH_STONE:
+    name: "Brique de pierre"
+    points: 1
+    linkedPlaceholder: "Brique de pierre"
+  CRAFTING_TABLE:
+    name: "Table de craft"
+    points: 1
+    linkedPlaceholder: "Table de craft"
+killing:
+  ZOMBIE:
+    name: "Zombie"
+    points: 1
+    linkedPlaceholder: "Zombie"
+  SPIDER:
+    name: "Araignée"
+    points: 20
+    linkedPlaceholder: "Araignée"

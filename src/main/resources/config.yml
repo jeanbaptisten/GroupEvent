@@ -1,0 +1,5 @@
+#   Main configuration file generated for GroupEvent plugin.
+
+# Dans ce fichier, vous pouvez choisir les events actifs.
+# /!\ Tout changement dans ce fichier nécessite un reload du serveur !
+farmTournament: true

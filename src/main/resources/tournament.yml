@@ -1,0 +1,141 @@
+#   Farm tournament configuration file generated for GroupEvent plugin.
+
+# Configuration des tournois à la journée.
+# Les tournois sont définis par trois informations : Leur identifiant, l'heure de début et l'heure de fin.
+# Afin de configurer un tournoi, merci de suivre ce modèle: (/!\ Tout écart au modèle risque de faire planter le plugin !)
+
+# Exemple:
+#  # Identifiant de l'event. Le choix est entièrement libre afin de gérer votre organisation.
+#  eventID:
+#    # Heure de début.
+#    # Format: HHhmm (ou HHh)
+#    # Exemple: 15h26 (ou 15h)
+#    begin: 11h05
+#    # Heure de fin.
+#    # Format: HHhmm (ou HHh)
+#    # Exemple: 15h26 (ou 15h)
+#    end: 11h10
+tournaments:
+  firstEventExample:
+    begin: 11h05
+    end: 11h10
+  secondEventExample:
+    begin: 19h35
+    end: 20h20
+
+# Configuration de l'action bar.
+# L'action bar correspond au message affiché à l'écran lorsque
+actionBar:
+  # Délai entre deux affichages de l'action bar.
+  # Unités : secondes.
+  delay: 5
+  # Format du message de l'action bar.
+  # Note : PAPI est supporté.
+  # Vous pouvez aussi utilisé le placeholder %points%, correspondant au nombre de points gagnés pendant la période.
+  format: "&7+ %points% points."
+
+
+# Configuration de la liste des rewards en fonction des rangs.
+# Exemple :
+#rewards:
+#  # Rang du joueur.
+#  # Dans cet exemple, le joueur est le joueur n°2 du classement.
+#  # Attention : Il doit être un integer positif !
+#  # Valeur du rang max: 30.
+#  2:
+#    # Nom de la récompense.
+#    # Note : N'est pas important pour la suite, vous permet juste d'être libre sur l'organisation.
+#    TokenCommand:
+#      # Type de récompense.
+#      # Types actuellement existants : COMMAND
+#      type: COMMAND
+#      # Commande exécutée par la console pour la récompense.
+#      # Placerholders disponibles : %player_name% (Pseudo réel du joueur)
+#      # Note : Les placeholders de PlaceholderAPI ne sont pas supportés.
+#      command: gm 1 %player_name%
+rewards:
+  1:
+    TokenCommand:
+      type: COMMAND
+      command: say Joueur 1 ! %player_name%
+  2:
+    TokenCommand:
+      type: COMMAND
+      command: say Joueur 2 (1) ! %player_name%
+    TokenCommand2:
+      type: COMMAND
+      command: say Joueur 2 (2) ! %player_name%
+  3:
+    TokenCommand:
+      type: COMMAND
+      command: say Joueur 3 ! %player_name%
+  4:
+    TokenCommand:
+      type: COMMAND
+      command: say Joueur 4 ! %player_name%
+  5:
+    TokenCommand:
+      type: COMMAND
+      command: say Joueur 5 ! %player_name%
+
+# Permet de configurer le temps d'un event forcé.
+# Unité : secondes.
+forcedTournamentTime: 1800
+
+# Période entre chaque actualisation du classement du tournoi.
+# Unité : secondes.
+# Attention : Plus la période d'actualisation est faible, plus les coûts en performances sont importants !!
+# Note : Ce délai est indépendant du délai de rafraichissement de PlaceholderAPI.
+topRefreshPeriod: 5
+
+# Configuration des messages avant et pendant un évènement.
+# Avec cette configuration, vous pouvez configurer autant de message voulu avec un délai choisi.
+# /!\ Attention à faire attention aux délais!
+# /!\ S'ils ne correspondent pas entre eux, certains messages peuvent ne pas être pris en compte.
+# Exemple: Si un message est setup pendant un autre tournoi, ce message ne s'affichera pas.
+# Note : PlaceholderAPI est géré dans ces messages.
+
+# Exemple:
+#  # Liste des messages envoyés avant le prochain event.
+#  # /!\ Cette clef est IMPORTANTE ! Ne la supprimez pas !
+#  before:
+#    # Identifiant du message.
+#    messageId:
+#      # Délai entre le tournoi et le message.
+#      # Dans cet exemple, le message arrivera 300 secondes avant le prochain event.
+#      # Unité: secondes.
+#      delay: 300
+#      # Contenu du message. Possibilité de mettre des couleurs !
+#      content: "Premier message"
+#  # Liste des messages envoyés pendant l'event.
+#  # /!\ Cette clef est IMPORTANTE ! Ne la supprimez pas !
+#  during:
+#    # Identifiant du message.
+#    messageId:
+#      # Délai entre le tournoi et le message.
+#      # Dans cet exemple, le message arrivera 300 secondes après le début de l'event.
+#      # Unité: secondes.
+#      delay: 300
+#      # Contenu du message. Possibilité de mettre des couleurs !
+#      content: "Premier message"
+messages:
+  before:
+    first:
+      delay: 300 #(Avant début)
+      content: "&7[&3Group&9Event&7] &fUn event va commencer dans &f%tf_timer_start% secondes &f!"
+    second:
+      delay: 250
+      content: "&7[&3Group&9Event&7] &fUn event va commencer dans &f%tf_timer_start% secondes &f! Préparez-vous vite !"
+  during:
+    first:
+      delay: 250 #(Après début)
+      content: |-
+        &7[&3Group&9Event&7] &fUn event est en cours !
+        Il vous reste &b%tf_timer_end% &fsecondes avant la fin de l'event.
+        Votre position: &b%tf_leaderboard_rank%&7 (%tf_leaderboard_points_self% points)
+    second:
+      delay: 300
+      content: |-
+        &7[&3Group&9Event&7] &fUn event est en cours ! Dépéchez-vous !
+        Il vous reste &b%tf_timer_end% &fsecondes avant la fin de l'event.
+        Votre position: &b%tf_leaderboard_rank%&7 (%tf_leaderboard_points_self% points)

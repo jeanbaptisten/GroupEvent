@@ -1,0 +1,9 @@
+name: GroupEvent
+version: '${project.version}'
+main: me.niz.groupevent.GroupEvent
+api-version: 1.16
+depend: [ PlaceholderAPI ]
+authors: [ Jb ]
+commands:
+  ts:
+    description: Main tournament event command.
